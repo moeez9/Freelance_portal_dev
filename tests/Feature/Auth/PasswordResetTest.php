@@ -1,8 +1,9 @@
 <?php
 
 use App\Models\User;
-use Illuminate\Auth\Notifications\ResetPassword;
-use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 test('reset password link screen can be rendered', function () {
     $response = $this->get('/forgot-password');
@@ -11,50 +12,53 @@ test('reset password link screen can be rendered', function () {
 });
 
 test('reset password link can be requested', function () {
-    Notification::fake();
+    Mail::fake();
 
     $user = User::factory()->create();
 
-    $this->post('/forgot-password', ['email' => $user->email]);
+    $response = $this->post('/forgot-password', ['email' => $user->email]);
 
-    Notification::assertSentTo($user, ResetPassword::class);
+    $response->assertRedirect(route('password.reset'));
+
+    $this->assertDatabaseHas('password_reset_tokens', [
+        'email' => strtolower($user->email),
+    ]);
 });
 
 test('reset password screen can be rendered', function () {
-    Notification::fake();
+    $response = $this->get('/reset-password/otp');
 
-    $user = User::factory()->create();
-
-    $this->post('/forgot-password', ['email' => $user->email]);
-
-    Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
-        $response = $this->get('/reset-password/'.$notification->token);
-
-        $response->assertStatus(200);
-
-        return true;
-    });
+    $response->assertStatus(200);
 });
 
-test('password can be reset with valid token', function () {
-    Notification::fake();
-
+test('password can be reset with valid otp', function () {
     $user = User::factory()->create();
+    $otp = '123456';
 
-    $this->post('/forgot-password', ['email' => $user->email]);
+    DB::table('password_reset_tokens')->insert([
+        'email' => strtolower($user->email),
+        'token' => Hash::make($otp),
+        'created_at' => now(),
+    ]);
 
-    Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
-        $response = $this->post('/reset-password', [
-            'token' => $notification->token,
+    $this->post('/reset-password/otp', [
+        'email' => $user->email,
+        'otp' => $otp,
+    ])
+        ->assertSessionHasNoErrors()
+        ->assertRedirect(route('password.new'));
+
+    $response = $this
+        ->withSession(['password_reset_verified_email' => strtolower($user->email)])
+        ->post('/reset-password/new', [
             'email' => $user->email,
-            'password' => 'password',
-            'password_confirmation' => 'password',
+            'password' => 'new-password',
+            'password_confirmation' => 'new-password',
         ]);
 
-        $response
-            ->assertSessionHasNoErrors()
-            ->assertRedirect(route('login'));
+    $response
+        ->assertSessionHasNoErrors()
+        ->assertRedirect(route('login'));
 
-        return true;
-    });
+    $this->assertTrue(Hash::check('new-password', $user->refresh()->password));
 });

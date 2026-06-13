@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Gig;
+use App\Models\GigCategory;
 use App\Models\GigPackage;
 use App\Models\Job;
 use App\Models\User;
@@ -50,21 +51,23 @@ it('shows only open jobs on public jobs page', function () {
 it('prevents ordering a package from another gig', function () {
     $employer = User::factory()->create(['role' => 'employer']);
     $freelancer = User::factory()->create(['role' => 'candidate']);
+    $category = GigCategory::create([
+        'name' => 'Programming',
+        'slug' => 'programming',
+    ]);
 
     $gigA = Gig::create([
         'freelancer_id' => $freelancer->id,
+        'gig_category_id' => $category->id,
         'title' => 'Gig A',
-        'slug' => 'gig-a',
         'description' => 'desc',
-        'category' => 'Programming',
         'status' => 'active',
     ]);
     $gigB = Gig::create([
         'freelancer_id' => $freelancer->id,
+        'gig_category_id' => $category->id,
         'title' => 'Gig B',
-        'slug' => 'gig-b',
         'description' => 'desc',
-        'category' => 'Programming',
         'status' => 'active',
     ]);
 
@@ -74,9 +77,15 @@ it('prevents ordering a package from another gig', function () {
         'name' => 'Basic',
         'description' => 'desc',
         'price' => 10,
-        'delivery_time' => 2,
+        'delivery_days' => 2,
     ]);
 
-    $response = $this->actingAs($employer)->post(route('orders.store', [$gigA, $packageB]));
+    $response = $this->actingAs($employer)->post(route('orders.store', $gigA), [
+        'gig_package_id' => $packageB->id,
+        'payment_method' => 'easypaisa',
+        'payer_name' => 'Test Employer',
+        'payer_contact' => '03001234567',
+        'transaction_reference' => 'TXN-123',
+    ]);
     $response->assertSessionHas('error');
 });

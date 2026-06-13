@@ -29,7 +29,7 @@ class JobController extends Controller
         Job::closeExpiredOpenJobs();
 
         $query = Job::with('employer')
-            ->whereIn('status', ['open', 'closed']);
+            ->where('status', 'open');
 
         if (request()->filled('search')) {
             $query->where('title', 'like', '%' . request('search') . '%');
