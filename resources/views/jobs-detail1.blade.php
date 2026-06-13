@@ -5,7 +5,7 @@
     <div class="container flex max-lg:flex-col lg:items-center justify-between gap-7 gap-y-4">
         <div class="jobs_info flex flex-wrap sm:gap-8 gap-4 w-full">
             <div class="overflow-hidden flex-shrink-0 sm:w-[100px] w-24 sm:h-[100px] h-24 rounded-full">
-                <img src="{{ $job->upload_logo_url ?? 'https://freelanhub.vercel.app/assets/images/company/8.png' }}" alt="logo" class="jobs_avatar w-full h-full object-cover" />
+                <img src="{{ $job->upload_logo_url ?? asset('assets/images/company/8.png') }}" alt="logo" class="jobs_avatar w-full h-full object-cover" />
             </div>
             <div class="flex flex-col gap-1">
                 <span class="jobs_company text-button text-primary">{{ $job->employer->name }}</span>

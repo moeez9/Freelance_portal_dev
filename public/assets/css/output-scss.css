@@ -1099,7 +1099,7 @@ textarea:focus {
   left: 50%;
   width: 30px;
   height: 30px;
-  background: url("https://freelanhub.vercel.app/assets/images/components/loading.gif") center center/contain no-repeat;
+  background: url("/assets/images/components/loading.gif") center center/contain no-repeat;
   transform: translate(-50%, -50%);
 }
 .tab_list.loading::before, .tab_list.loading::after {
@@ -2237,7 +2237,7 @@ section:has(.slide-overflow-unset) {
 .video {
   position: relative;
   background-attachment: fixed;
-  background-image: url(https://freelanhub.vercel.app/assets/images/components/banner_video7.webp);
+  background-image: url(/assets/images/components/banner_video7.webp);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2558,32 +2558,32 @@ section:has(.slide-overflow-unset) {
 .list_layout .layout_btn.cols_2::before, .list_layout .layout_btn.grid2::before,
 .list_layout .layout_link.cols_2::before,
 .list_layout .layout_link.grid2::before {
-  background-image: url("https://freelanhub.vercel.app/assets/images/icon/grid2.svg");
+  background-image: url("/assets/images/icon/grid2.svg");
 }
 .list_layout .layout_btn.cols_2.active::before, .list_layout .layout_btn.grid2.active::before,
 .list_layout .layout_link.cols_2.active::before,
 .list_layout .layout_link.grid2.active::before {
-  background-image: url("https://freelanhub.vercel.app/assets/images/icon/grid2-active.svg");
+  background-image: url("/assets/images/icon/grid2-active.svg");
 }
 .list_layout .layout_btn.cols_3::before, .list_layout .layout_btn.grid3::before,
 .list_layout .layout_link.cols_3::before,
 .list_layout .layout_link.grid3::before {
-  background-image: url("https://freelanhub.vercel.app/assets/images/icon/grid3.svg");
+  background-image: url("/assets/images/icon/grid3.svg");
 }
 .list_layout .layout_btn.cols_3.active::before, .list_layout .layout_btn.grid3.active::before,
 .list_layout .layout_link.cols_3.active::before,
 .list_layout .layout_link.grid3.active::before {
-  background-image: url("https://freelanhub.vercel.app/assets/images/icon/grid3-active.svg");
+  background-image: url("/assets/images/icon/grid3-active.svg");
 }
 .list_layout .layout_btn.cols_4::before, .list_layout .layout_btn.grid4::before,
 .list_layout .layout_link.cols_4::before,
 .list_layout .layout_link.grid4::before {
-  background-image: url("https://freelanhub.vercel.app/assets/images/icon/grid4.svg");
+  background-image: url("/assets/images/icon/grid4.svg");
 }
 .list_layout .layout_btn.cols_4.active::before, .list_layout .layout_btn.grid4.active::before,
 .list_layout .layout_link.cols_4.active::before,
 .list_layout .layout_link.grid4.active::before {
-  background-image: url("https://freelanhub.vercel.app/assets/images/icon/grid4-active.svg");
+  background-image: url("/assets/images/icon/grid4-active.svg");
 }
 .list_layout .layout_btn.cols_5, .list_layout .layout_btn.grid5,
 .list_layout .layout_link.cols_5,
@@ -2596,7 +2596,7 @@ section:has(.slide-overflow-unset) {
   left: -8px;
   background-position: left;
   background-size: contain;
-  background-image: url("https://freelanhub.vercel.app/assets/images/icon/grid2.svg");
+  background-image: url("/assets/images/icon/grid2.svg");
 }
 .list_layout .layout_btn.cols_5::after, .list_layout .layout_btn.grid5::after,
 .list_layout .layout_link.cols_5::after,
@@ -2609,26 +2609,26 @@ section:has(.slide-overflow-unset) {
   background-position: left;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("https://freelanhub.vercel.app/assets/images/icon/grid3.svg");
+  background-image: url("/assets/images/icon/grid3.svg");
   content: "";
 }
 .list_layout .layout_btn.cols_5.active::before, .list_layout .layout_btn.grid5.active::before,
 .list_layout .layout_link.cols_5.active::before,
 .list_layout .layout_link.grid5.active::before {
-  background-image: url("https://freelanhub.vercel.app/assets/images/icon/grid2-active.svg");
+  background-image: url("/assets/images/icon/grid2-active.svg");
 }
 .list_layout .layout_btn.cols_5.active::after, .list_layout .layout_btn.grid5.active::after,
 .list_layout .layout_link.cols_5.active::after,
 .list_layout .layout_link.grid5.active::after {
-  background-image: url("https://freelanhub.vercel.app/assets/images/icon/grid3-active.svg");
+  background-image: url("/assets/images/icon/grid3-active.svg");
 }
 .list_layout .layout_btn.list::before,
 .list_layout .layout_link.list::before {
-  background-image: url("https://freelanhub.vercel.app/assets/images/icon/list.svg");
+  background-image: url("/assets/images/icon/list.svg");
 }
 .list_layout .layout_btn.list.active::before,
 .list_layout .layout_link.list.active::before {
-  background-image: url("https://freelanhub.vercel.app/assets/images/icon/list-active.svg");
+  background-image: url("/assets/images/icon/list-active.svg");
 }
 
 @media (min-width: 1280px) {

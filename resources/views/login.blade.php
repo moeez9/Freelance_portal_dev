@@ -4,7 +4,7 @@
 <section class="breadcrumb">
             <div class="breadcrumb_inner relative  lg:py-20 py-14">
                 <div class="breadcrumb_bg absolute top-0 left-0 w-full h-full">
-                    <img src="https://freelanhub.vercel.app/assets/images/components/breadcrumb_candidate.webp" alt="breadcrumb_candidate" class="w-full h-full object-cover" />
+                    <img src="{{ asset('assets/images/components/breadcrumb_candidate.webp') }}" alt="breadcrumb_candidate" class="w-full h-full object-cover" />
                 </div>
                 <div class="container relative h-full">
                     <div class="breadcrumb_content flex flex-col items-start justify-center xl:w-[1000px] lg:w-[848px] md:w-5/6 w-full h-full">

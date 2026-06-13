@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="dashboard_main overflow-hidden lg:w-screen lg:h-screen flex sm:pt-20 pt-16">
+<div class="dashboard_main overflow-hidden lg:w-screen lg:h-screen flex">
     <div class="menu_dashboard overflow-hidden flex-shrink-0 min-[320px]:w-[280px] w-[80vw] h-full bg-white relative z-[2] max-lg:hidden">
         @include('partials.dashboard.employer-menu', ['active' => 'dashboard'])
     </div>
@@ -147,7 +147,7 @@
 @endsection
 
 @push('scripts')
-<script src="https://freelanhub.vercel.app/assets/js/apexcharts.js"></script>
+<script src="{{ asset('assets/js/apexcharts.js') }}"></script>
 <script>
     (function () {
         const chartEl = document.querySelector('#employer-dashboard-chart');

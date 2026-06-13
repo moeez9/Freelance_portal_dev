@@ -4,7 +4,7 @@
 <section class="breadcrumb">
             <div class="breadcrumb_inner relative lg:py-20 py-14">
                 <div class="breadcrumb_bg absolute top-0 left-0 w-full h-full">
-                    <img src="https://freelanhub.vercel.app/assets/images/components/breadcrumb_candidate.webp" alt="breadcrumb_candidate" class="w-full h-full object-cover" />
+                    <img src="{{ asset('assets/images/components/breadcrumb_candidate.webp') }}" alt="breadcrumb_candidate" class="w-full h-full object-cover" />
                 </div>
                 <div class="container relative h-full">
                     <div class="breadcrumb_content flex flex-col items-start justify-center xl:w-[1000px] lg:w-[848px] md:w-5/6 w-full h-full">
@@ -36,13 +36,13 @@
                 <a href="{{ url('/contact2') }}" class="button-main mt-4 animate animate_top" style="--i: 3">Contact Us</a>
                 <ul class="list_img grid sm:grid-cols-3 xl:gap-15 lg:gap-8 gap-5 w-full md:mt-10 mt-7">
                     <li class="w-full h-full rounded-xl overflow-hidden animate animate_top" style="--i: 4">
-                        <img src="https://freelanhub.vercel.app/assets/images/avatar/about1.webp" alt="avatar/about1" class="w-full h-full object-cover" />
+                        <img src="{{ asset('assets/images/avatar/about1.webp') }}" alt="avatar/about1" class="w-full h-full object-cover" />
                     </li>
                     <li class="w-full h-full rounded-xl overflow-hidden animate animate_top" style="--i: 5">
-                        <img src="https://freelanhub.vercel.app/assets/images/avatar/about2.webp" alt="avatar/about2" class="w-full h-full object-cover" />
+                        <img src="{{ asset('assets/images/avatar/about2.webp') }}" alt="avatar/about2" class="w-full h-full object-cover" />
                     </li>
                     <li class="w-full h-full rounded-xl overflow-hidden animate animate_top" style="--i: 6">
-                        <img src="https://freelanhub.vercel.app/assets/images/avatar/about3.webp" alt="avatar/about3" class="w-full h-full object-cover" />
+                        <img src="{{ asset('assets/images/avatar/about3.webp') }}" alt="avatar/about3" class="w-full h-full object-cover" />
                     </li>
                 </ul>
             </div>
@@ -220,7 +220,7 @@
                     </li>
                     <li>
                         <a href="https://www.facebook.com/" target="_blank" class="block animate animate_top" style="--i: 3">
-                            <img src="https://freelanhub.vercel.app/assets/images/avatar/IMG-9.webp" alt="avatar/IMG-9" class="w-full h-full object-cover rounded-20" />
+                            <img src="{{ asset('assets/images/avatar/IMG-9.webp') }}" alt="avatar/IMG-9" class="w-full h-full object-cover rounded-20" />
                             <div class="flex items-center justify-between mt-5">
                                 <div class="flex flex-col gap-1">
                                     <strong class="heading6 duration-300 hover:text-primary">Theresa Webb</strong>
@@ -312,10 +312,10 @@
                 </div>
                 <ul class="list_img grid grid-cols-2 sm:gap-7.5 gap-5 flex-shrink-0 xl:w-[690px] lg:w-3/5 w-full">
                     <li class="w-full aspect-[3/4] rounded-lg overflow-hidden animate animate_left" style="--i: 1">
-                        <img src="https://freelanhub.vercel.app/assets/images/blog/9.webp" alt="IMG-10" class="w-full h-full object-cover" />
+                        <img src="{{ asset('assets/images/blog/9.webp') }}" alt="IMG-10" class="w-full h-full object-cover" />
                     </li>
                     <li class="w-full aspect-[3/4] rounded-lg overflow-hidden animate animate_left" style="--i: 2">
-                        <img src="https://freelanhub.vercel.app/assets/images/blog/4.webp" alt="IMG-11" class="w-full h-full object-cover" />
+                        <img src="{{ asset('assets/images/blog/4.webp') }}" alt="IMG-11" class="w-full h-full object-cover" />
                     </li>
                 </ul>
             </div>

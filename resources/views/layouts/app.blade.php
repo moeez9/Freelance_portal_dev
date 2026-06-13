@@ -8,7 +8,7 @@
     <title>@yield('title', 'FreelanHub - Job Board & Freelance Marketplace')</title>
 
     <link rel="shortcut icon" href="{{ asset('assets/images/fav.png') }}" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome/all.min.css') }}">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}">

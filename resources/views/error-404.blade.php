@@ -3,7 +3,7 @@
 @section('content')
 <div class="error flex items-center justify-center w-screen h-screen">
             <div class="container flex max-xl:flex-col items-center justify-between gap-y-8">
-                <img src="https://freelanhub.vercel.app/assets/images/components/error.png" alt="components/error" class="flex-shrink-0 xl:w-[55%] max-xl:max-h-[40vh] w-auto" />
+                <img src="{{ asset('assets/images/components/error.png') }}" alt="components/error" class="flex-shrink-0 xl:w-[55%] max-xl:max-h-[40vh] w-auto" />
                 <div class="content w-fit">
                     <h1 class="md:text-9xl text-7xl font-bold">Oops!</h1>
                     <h2 class="heading2 mt-6">Something is Missing.</h2>
